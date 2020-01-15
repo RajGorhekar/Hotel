@@ -1,4 +1,4 @@
-# hotel
+# Hotel
 
 A new Flutter project.
 

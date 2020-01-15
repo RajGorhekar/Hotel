@@ -24,8 +24,11 @@ class CartListBloc extends BlocBase {
 
   removeFromList(FoodItem foodItem) {
     listSink.add(provider.removeFromList(foodItem));
-    
   }
+
+  // contains(FoodItem foodItem){
+  //   listSink.add(provider.contains(foodItem));
+  // }
 
 //dispose will be called automatically by closing its streams
   @override

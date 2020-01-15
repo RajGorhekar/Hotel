@@ -3,7 +3,9 @@ import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:hotel/pages/home.dart';
 import 'bloc/cartListBloc.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

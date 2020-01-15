@@ -4,6 +4,8 @@ import 'package:hotel/bloc/cartListBloc.dart';
 import 'package:hotel/model/food_item.dart';
 import 'cart.dart';
 
+
+
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -44,6 +46,7 @@ class _ItemContainerState extends State<ItemContainer> {
   final CartListBloc bloc = BlocProvider.getBloc<CartListBloc>();
 
   addToCart(FoodItem foodItem) {
+    
     bloc.addToList(foodItem);
     setState(() {});
   }
@@ -101,6 +104,7 @@ class FirstHalf extends StatelessWidget {
 }
 
 Widget categories() {
+
   return Padding(
     padding: EdgeInsets.only(left: 35),
     child: Container(
@@ -109,7 +113,6 @@ Widget categories() {
         scrollDirection: Axis.horizontal,
         children: <Widget>[
           CategoryListItem(
-            categoryIcon: Icons.bug_report,
             categoryName: "Burgers",
             availability: 12,
             selected: true,
@@ -121,7 +124,6 @@ Widget categories() {
             margin: const EdgeInsets.only(left: 0, right: 15.0),
           ),
           CategoryListItem(
-            categoryIcon: Icons.bug_report,
             categoryName: "Pizza",
             availability: 12,
             selected: false,
@@ -133,7 +135,6 @@ Widget categories() {
             margin: const EdgeInsets.only(left: 0, right: 15.0),
           ),
           CategoryListItem(
-            categoryIcon: Icons.bug_report,
             categoryName: "Rolls",
             availability: 12,
             selected: false,
@@ -145,7 +146,6 @@ Widget categories() {
             margin: const EdgeInsets.only(left: 0, right: 15.0),
           ),
           CategoryListItem(
-            categoryIcon: Icons.bug_report,
             categoryName: "sandwich",
             availability: 12,
             selected: false,
@@ -157,7 +157,6 @@ Widget categories() {
             margin: const EdgeInsets.only(left: 0, right: 15.0),
           ),
           CategoryListItem(
-            categoryIcon: Icons.bug_report,
             categoryName: "tacos",
             availability: 12,
             selected: false,
@@ -240,7 +239,7 @@ class Items extends StatelessWidget {
                                   fontSize: 18,
                                 )),
                           ),
-                          Text("\$$itemPrice",
+                          Text("$itemPrice Rs",
                               style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 fontSize: 18,
@@ -278,13 +277,11 @@ class Items extends StatelessWidget {
 class CategoryListItem extends StatelessWidget {
   const CategoryListItem({
     Key key,
-    @required this.categoryIcon,
     @required this.categoryName,
     @required this.availability,
     @required this.selected,
   }) : super(key: key);
 
-  final IconData categoryIcon;
   final String categoryName;
   final int availability;
   final bool selected;
@@ -398,7 +395,6 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final CartListBloc bloc = BlocProvider.getBloc<CartListBloc>();
-    // TODO: implement build
     return Container(
       margin: EdgeInsets.only(bottom: 15),
       child: Row(
@@ -435,10 +431,12 @@ class CustomAppBar extends StatelessWidget {
       },
       child: Container(
         margin: EdgeInsets.only(right: 30),
-        child: Text(length.toString()),
+        child: Text(length.toString(),style: TextStyle(
+          color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20
+        ),),
         padding: EdgeInsets.all(15),
         decoration: BoxDecoration(
-            color: Colors.yellow[800], borderRadius: BorderRadius.circular(20)),
+            color: Colors.cyan, borderRadius: BorderRadius.circular(20)),
       ),
     );
   }

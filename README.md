@@ -1,5 +1,5 @@
 # Hotel
-## Hotel UI with most of Functionality and static data which includes the cart and checkout Option 
+## Hotel App with most of Functionality and static data (UI) which includes the cart and checkout Option 
 
 The Following are the few ScreenShots of the App : 
 
